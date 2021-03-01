@@ -8,56 +8,130 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".EmpPkg.Employee"
-    android:background="#60B4E8A5"
-    >
+    android:background="#60B4E8A5">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="EMPLOYEE DETAIL"
         android:gravity="center"
-        android:textSize="23dp"
+        android:textSize="26dp"
         android:layout_marginTop="10dp"
         android:textColor="#397000"
         android:textStyle="bold"
         ></TextView>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-        <com.google.android.material.textfield.TextInputEditText
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name :-"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#397000"
+            android:textStyle="bold"
+            android:padding="10dp"
+            ></TextView>
+
+        <TextView
             android:id="@+id/tvName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Name"
-            android:layout_margin="13dp"
-        />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:text="Name"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#397000"
+            android:textStyle="bold"
+            android:padding="10dp"
+            ></TextView>
+    </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-        <com.google.android.material.textfield.TextInputEditText
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age :-"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#397000"
+            android:textStyle="bold"
+            android:padding="10dp"
+            ></TextView>
+
+        <TextView
             android:id="@+id/tvAge"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Age"
-            android:layout_margin="13dp"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:text="Age"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#397000"
+            android:textStyle="bold"
+            android:padding="10dp"
+            ></TextView>
 
-    <com.google.android.material.textfield.TextInputLayout
+    </LinearLayout>
+
+
+
+
+   <!-- <TextView
+        android:id="@+id/tvSalary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tvSalary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Salary"
-            android:layout_margin="13dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:text="Address"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#397000"
+        android:textStyle="bold"
+        android:padding="10dp"
+        ></TextView>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        >
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:ems="10"-->
+<!--        android:gravity="center"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:text="Author"></Spinner>-->
+    </LinearLayout>
+
+<!--
+    <TextView
+        android:id="@+id/submited"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Docs Sunbmitted Status"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="#397000"
+        android:layout_margin="10dp"
+        android:textStyle="bold"></TextView>-->
+
 
     <ProgressBar
         android:id="@+id/progressbar"
@@ -81,6 +155,50 @@
         android:padding="14dp"
         android:orientation="vertical"
         tools:ignore="Suspicious0dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/criminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#6084ED66">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/criminal"
+                    android:text="Short Video"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/pickVideoFab"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_gravity="center"
+                android:src="@drawable/addvideo"
+                app:backgroundTint="@color/mycolor">
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="130dp"
+                ></VideoView>
+
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/adharCard"
@@ -210,7 +328,34 @@
                 android:layout_width="40dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="130dp"></ImageView>
+                android:layout_marginLeft="130dp">
+            </ImageView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#6084ED66"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Criminal Record"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/photo"
+                    />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
 <!--        <androidx.cardview.widget.CardView-->
@@ -248,37 +393,7 @@
 <!--            -->
 <!--        </androidx.cardview.widget.CardView>-->
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/criminal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#6084ED66">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/criminal"
-                    android:text="Criminal Verification"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <ImageView
-                android:id="@+id/criminalimg"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="130dp"
-                ></ImageView>
-        </androidx.cardview.widget.CardView>
         <Button
             android:id="@+id/upload"
             android:layout_width="match_parent"
@@ -288,11 +403,8 @@
             android:text="Upload"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
-            android:textStyle="bold"
-            >
+            android:textStyle="bold">
         </Button>
-
-
     </LinearLayout>
 
 </ScrollView>

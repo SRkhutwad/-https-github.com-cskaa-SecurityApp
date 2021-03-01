@@ -104,17 +104,14 @@ public class ClientLogin extends AppCompatActivity implements View.OnClickListen
                 if (task.isSuccessful())
                 {
                     //redirect to client home screen
-//                    startActivity(new Intent(getApplicationContext(),ClientHomeActivity.class));
-                    startActivity(new Intent(getApplicationContext(),ClientHomeActivity.class));
+                   startActivity(new Intent(getApplicationContext(),ClientHomeActivity.class));
+                   // startActivity(new Intent(getApplicationContext(), EmpMasterShowDetails.class));
                     progressBar.setVisibility(View.GONE);
-
                 }else
                 {
                     Toast.makeText(ClientLogin.this, "Failed you login! Please check your creadiential!", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
     }
 }

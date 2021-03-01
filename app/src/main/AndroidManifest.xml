@@ -2,53 +2,54 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.project.verification">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-<!--    <uses-permission android:name="android.permission.CAMERA">-->
-<!--    </uses-permission>-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/logo_splash_login"
         android:label="SecurEntry"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EmpPkg.Employee"></activity>
+        <activity android:name=".CriminalRecordStored"></activity>
+        <activity android:name=".AllDocsUploadEmp.EmpAllDocsAdd" />
+        <activity android:name=".DocumentUpload.AddEmpDocs" />
+        <activity android:name=".EmpMasterShowData.EmpMasterShowDetails" />
+        <activity android:name=".SubmittedResponse" />
+        <activity android:name=".ClientShowEmpData.ClientEmployee" />
+        <activity android:name=".ClientShowEmpData.AllEmpShowClient" />
+        <activity android:name=".EmpPkg.Employee" />
         <activity android:name=".EmpPkg.AllEmp" />
         <activity android:name=".securityHomeScreen.EmpHomeScrren" />
         <activity android:name=".securityRegistration.securityLogin" />
         <activity android:name=".securityRegistration.securityRegi" />
         <activity android:name=".securityOtp.OtpVerifySecurity" />
-        <activity android:name=".securityOtp.SendOtp" />
-<!--        <activity android:name=".security.SecuritySendOtp"/>-->
+        <activity android:name=".securityOtp.SendOtp" /> <!-- <activity android:name=".security.SecuritySendOtp"/> -->
         <activity android:name=".ClientHomeActivity" />
         <activity android:name=".ClientLogin" />
         <activity android:name=".splashScreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity android:name=".SecondActivity" />
-
         <activity
             android:name=".VerifyOTPActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".SendOTPActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
     </application>
 
 </manifest>

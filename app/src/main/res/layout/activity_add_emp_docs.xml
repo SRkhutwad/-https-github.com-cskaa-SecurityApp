@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:orientation="vertical"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="10dp"
+tools:context=".DocumentUpload.AddEmpDocs"
+android:background="#60B4E8A5">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="EMPLOYEE DETAIL"
+    android:gravity="center"
+    android:textSize="26dp"
+    android:layout_marginTop="10dp"
+    android:textColor="#397000"
+    android:textStyle="bold"
+    >
+</TextView>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name :-"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#397000"
+        android:textStyle="bold"
+        android:padding="10dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#397000"
+        android:textStyle="bold"
+        android:padding="10dp"
+        ></TextView>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age :-"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#397000"
+        android:textStyle="bold"
+        android:padding="10dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#397000"
+        android:textStyle="bold"
+        android:padding="10dp"
+        ></TextView>
+
+</LinearLayout>
+
+
+
+
+<!-- <TextView
+     android:id="@+id/tvSalary"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="Address"
+     android:gravity="center"
+     android:textSize="20dp"
+     android:layout_marginTop="15dp"
+     android:textColor="#397000"
+     android:textStyle="bold"
+     android:padding="10dp"
+     ></TextView>-->
+
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    >
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/criminalrecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Criminal Background"
+        android:layout_margin="20dp"
+        android:gravity="center" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/submited"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sunbmitted Status"
+        android:layout_margin="20dp"
+        android:gravity="center" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<ProgressBar
+    android:id="@+id/progressbar"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:alignmentMode="alignMargins"
+        android:padding="14dp"
+        android:orientation="vertical"
+        tools:ignore="Suspicious0dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/adharCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#6084ED66"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adhar Card"
+                    android:id="@+id/adhartext"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/adharcard"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/adharimg"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="130dp"
+                ></ImageView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#6084ED66"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pan Card"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/pan"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/panimg"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="130dp"
+                ></ImageView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/d_licen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#6084ED66"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Driver License"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/licen"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/licenimg"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="130dp"
+                ></ImageView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#6084ED66"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Photo"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/photo"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/ephoto"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="130dp">
+            </ImageView>
+        </androidx.cardview.widget.CardView>
+
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:id="@+id/video"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:backgroundTint="#6084ED66"-->
+        <!--            >-->
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:layout_margin="10dp"-->
+        <!--                android:orientation="vertical"-->
+        <!--                >-->
+        <!--                <TextView-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="Add Short Video"-->
+        <!--                    android:textSize="20dp"-->
+        <!--                    android:textStyle="bold"-->
+        <!--                    android:drawableLeft="@drawable/videocam"-->
+        <!--                    />-->
+        <!--            </LinearLayout>-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/shortvideo"-->
+        <!--                android:layout_width="20dp"-->
+        <!--                android:layout_height="20dp"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:layout_marginLeft="150dp"-->
+        <!--                ></ImageView>-->
+        <!--            -->
+        <!--        </androidx.cardview.widget.CardView>-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/criminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#6084ED66">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/criminal"
+                    android:text="Short Video"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/pickVideoFab"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_gravity="center"
+                android:src="@drawable/addvideo"
+                app:backgroundTint="@color/mycolor">
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="130dp"
+                ></VideoView>
+
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/backbtn"
+            android:text="Upload"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold">
+        </Button>
+    </LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>

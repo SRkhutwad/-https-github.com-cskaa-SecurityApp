@@ -2,6 +2,8 @@ package com.project.verification.securityRegistration;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,8 +43,14 @@ public class myAdapter extends FirebaseRecyclerAdapter<Model,myAdapter.myviewhol
                 @Override
                 public void onClick(View v)
                 {
-                        Intent intent = new Intent(context, AllEmp.class);
-                        context.startActivity(intent);
+//                        Intent intent = new Intent(context, AllEmp.class);
+//                        context.startActivity(intent);
+
+                    Intent intent = new Intent(context, AllEmp.class);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    }
+                    context.startActivity(intent);
                 }
             });
 
@@ -61,7 +69,6 @@ public class myAdapter extends FirebaseRecyclerAdapter<Model,myAdapter.myviewhol
         TextView name,address,state,city,pin,phone,email;
         CardView cvv;
 
-
         public myviewholder(@NonNull View itemView)
         {
             super(itemView);
@@ -75,7 +82,6 @@ public class myAdapter extends FirebaseRecyclerAdapter<Model,myAdapter.myviewhol
             phone = (TextView)itemView.findViewById(R.id.phone);
 
             cvv = itemView.findViewById(R.id.cvv);
-
         }
     }
 }

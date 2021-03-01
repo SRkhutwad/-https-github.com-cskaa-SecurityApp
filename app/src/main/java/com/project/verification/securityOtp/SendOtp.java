@@ -32,8 +32,6 @@ public class SendOtp extends AppCompatActivity
 
         final ProgressBar progressBar = findViewById(R.id.progressBar);
 
-
-
         buttonGetOTP.setOnClickListener(new View.OnClickListener()
         {
             @Override

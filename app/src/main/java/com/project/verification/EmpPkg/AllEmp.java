@@ -26,8 +26,10 @@ public class AllEmp extends AppCompatActivity {
     List<EmpData> empData = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_all_emp);
         recView = findViewById(R.id.recView);
         layoutManager = new LinearLayoutManager(AllEmp.this);
@@ -53,10 +55,8 @@ public class AllEmp extends AppCompatActivity {
 
                 for(EmpData edata : response.body().getData()) {
                     EmpData ed = new EmpData(edata.getId(),edata.getEmployeeName(),edata.getEmployeeAge(), edata.getEmployeeSalary(),edata.getProfileImage());
-
                     empData.add(ed);
                 }
-
                 Log.d("LIST",""+empData);
 
                 adapter = new EmpAdapter(getApplicationContext(), empData);
@@ -65,9 +65,7 @@ public class AllEmp extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<EmpPojo> call, Throwable t) {
-
             }
         });
-
     }
 }

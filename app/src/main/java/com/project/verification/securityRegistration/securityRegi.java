@@ -111,93 +111,78 @@ public class securityRegi extends AppCompatActivity implements View.OnClickListe
             emp_id.requestFocus();
             return;
         }
-
         if (empid.length()<4)
         {
             emp_id.setError("Minimum Id lenght should be 4 char");
             emp_id.requestFocus();
             return;
         }
-
-
         if (uname.isEmpty())
         {
             name.setError("Full name is required");
             name.requestFocus();
             return;
         }
-
         if (addrs.isEmpty())
         {
             address.setError("Address is required");
             address.requestFocus();
             return;
         }
-
         if (states.isEmpty())
         {
             state.setError("State is required");
             state.requestFocus();
             return;
         }
-
         if (citys.isEmpty())
         {
             city.setError("City is required");
             city.requestFocus();
             return;
         }
-
         if (pins.isEmpty())
         {
             pin.setError("Pin is required");
             pin.requestFocus();
             return;
         }
-
         if (pins.length()<6)
         {
             pin.setError("Min lenght should be 6 digits");
             pin.requestFocus();
             return;
         }
-
         if (contact.isEmpty())
         {
             phone.setError("Phone is required");
             phone.requestFocus();
             return;
         }
-
         if (contact.length()<10)
         {
             phone.setError("Min lenght should be 10 digits");
             phone.requestFocus();
             return;
         }
-
-
         if (mail.isEmpty())
         {
             email.setError("Email is required");
             email.requestFocus();
             return;
         }
-
         if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches())
         {
             email.setError("Please provide valid email!");
             email.requestFocus();
             return;
         }
-
         if (password.isEmpty())
         {
             pass.setError("Password name is required");
             pass.requestFocus();
             return;
         }
-
         if (password.length()<6)
         {
             pass.setError("Min password lenght should be 6 char");
