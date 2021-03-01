@@ -26,6 +26,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
@@ -56,6 +57,9 @@ import com.project.verification.SubmittedResponse;
 import com.project.verification.securityRegistration.Emp_User;
 import com.project.verification.securityRegistration.securityLogin;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,11 +70,14 @@ public class Employee extends AppCompatActivity
 {
     Button upload;
     //TextInputEditText submited;//, criminalrecord;
-    TextView inEdName, inEdAge,submited,selected;//,inEdSalary;
+    TextView inEdName, inEdAge,submited,selected,status;//,inEdSalary;
 
-    CardView adharCard,pan,d_licen,photo;//;,criminal;
+    CardView adharCard,pan,d_licen,photo,criminal_card,status_card;//;,criminal;
 
     private ImageView photo1,photo2,photo3,photo4;//,photo5;
+
+    ImageView adharPicStatus,panPicsStatus,diverPicStatus,photoPicStatus;
+
     private Bitmap adharimg,panimg,licenimg,ephoto;//,criminalimg;
 
     private StorageReference mStorageRef;
@@ -84,6 +91,8 @@ public class Employee extends AppCompatActivity
     private static final int VIDEO_PICK_CAMERA_CODE = 101;
     private static final int CAMERA_REQUEST_CODE = 102;
 
+
+
     private String[] cameraPermissions;
     private Uri videoUri = null; //
 
@@ -91,10 +100,25 @@ public class Employee extends AppCompatActivity
 
     private ProgressDialog progressDialog;
 
+    CriminalPojo criminalPojo = new CriminalPojo();
+
 //    FirebaseDatabase database;
 //    DatabaseReference reff;
 //    //Spinner spinner;
 //    int maxid = 0;
+
+    //Criminal Record
+    private EditText titlee;//, description, author;
+    private Button save;
+
+    FirebaseDatabase database;
+    //DatabaseReference reff;
+    int maxid = 0;
+
+    Spinner spin1;
+    EditText ed1,type_status;
+
+    String item = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +126,11 @@ public class Employee extends AppCompatActivity
         setContentView(R.layout.activity_employee);
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
+
+        spin1 = findViewById(R.id.spinner);
+        ed1 = findViewById(R.id.title);
+        type_status = findViewById(R.id.type_status);
+       // saveStatus = findViewById(R.id.saveStatus);
 
         photo1 = findViewById(R.id.adharimg);
         photo2 = findViewById(R.id.panimg);
@@ -113,7 +142,7 @@ public class Employee extends AppCompatActivity
         inEdName = findViewById(R.id.tvName);
         inEdAge = findViewById(R.id.tvAge);
         //inEdSalary = findViewById(R.id.tvSalary);
-       submited = findViewById(R.id.submited);
+        submited = findViewById(R.id.submited);
       //  criminalrecord = findViewById(R.id.criminalrecord);
 
         //CardView
@@ -122,6 +151,16 @@ public class Employee extends AppCompatActivity
        d_licen = findViewById(R.id.d_licen);
         photo = findViewById(R.id.photo);
         selected = findViewById(R.id.selected);
+        status = findViewById(R.id.status);
+        criminal_card = findViewById(R.id.criminal_card);
+        status_card = findViewById(R.id.status_card);
+       // selectedd = findViewById(R.id.select_status);
+
+        //panPicsStatus,diverPicStatus,photoPicStatus;
+        adharPicStatus = findViewById(R.id.adharimg_ok);
+        panPicsStatus = findViewById(R.id.pan_ok);
+        diverPicStatus = findViewById(R.id.driver_ok);
+        photoPicStatus = findViewById(R.id.photo_ok);
         //criminal = findViewById(R.id.criminal);
 
 
@@ -176,10 +215,31 @@ public class Employee extends AppCompatActivity
         selected.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Employee.this, CriminalRecordStored.class);
-                startActivity(intent);
+                spin1.setVisibility(View.VISIBLE);
+                ed1.setVisibility(View.VISIBLE);
+//                Intent intent = new Intent(Employee.this, CriminalRecordStored.class);
+//                startActivity(intent);
             }
         });
+
+        status.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                  type_status.setVisibility(View.VISIBLE);
+//                Intent intent = new Intent(Employee.this, CriminalRecordStored.class);
+//                startActivity(intent);
+            }
+        });
+
+
+//        selectedd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                saveStatus.setVisibility(View.VISIBLE);
+////                Intent intent = new Intent(Employee.this, CriminalRecordStored.class);
+////                startActivity(intent);
+//            }
+//        });
 
 //        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 //            @Override
@@ -275,6 +335,11 @@ public class Employee extends AppCompatActivity
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("inEdName", inEdName.getText().toString());
                 map.put("inEdAge", inEdAge.getText().toString());
+                map.put("title", ed1.getText().toString());
+                map.put("status", type_status.getText().toString());
+
+                map.put("spinner",spin1.getSelectedItem().toString());
+
                 //map.put("inEdSalary",inEdSalary.getText().toString());
                // map.put("submited", submited.getText().toString());
                // map.put("criminalrecord", criminalrecord.getText().toString());
@@ -302,6 +367,18 @@ public class Employee extends AppCompatActivity
             public void onClick(View v)
             {
                 videoPickDialog();
+            }
+        });
+
+        spin1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                spin1.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }
@@ -434,6 +511,16 @@ public class Employee extends AppCompatActivity
 
         videoView.setVideoURI(videoUri);
         videoView.requestFocus();
+
+        adharCard.setVisibility(View.VISIBLE);
+        pan.setVisibility(View.VISIBLE);
+        d_licen.setVisibility(View.VISIBLE);
+        photo.setVisibility(View.VISIBLE);
+        criminal_card.setVisibility(View.VISIBLE);
+        status_card.setVisibility(View.VISIBLE);
+        upload.setVisibility(View.VISIBLE);
+
+
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
@@ -550,6 +637,7 @@ public class Employee extends AppCompatActivity
                                 Uri downloadUri = uri;
                             }
                         });
+                        adharPicStatus.setImageResource(R.drawable.ic_baseline_done_outline_24);
                         Toast.makeText(com.project.verification.EmpPkg.Employee.this, "Photo Uploaded Successfully!!!", Toast.LENGTH_SHORT).show();
                     }
                 })
@@ -558,7 +646,7 @@ public class Employee extends AppCompatActivity
                     public void onFailure(@NonNull Exception e) {
                        // p.setVisibility(View.GONE);
                         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-
+                        adharPicStatus.setImageResource(R.drawable.ic_baseline_close_24);
                        // Toast.makeText(com.project.verification.EmpPkg.Employee.this, "Upload Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -631,7 +719,10 @@ public class Employee extends AppCompatActivity
                             public void onSuccess(Uri uri) {
                                 Uri downloadUri = uri;
                             }
-                        });
+                        });// panPicsStatus = findViewById(R.id.pan_ok);
+                        //diverPicStatus = findViewById(R.id.driver_ok);
+                       // photoPicStatus = findViewById(R.id.photo_ok);
+                        panPicsStatus.setImageResource(R.drawable.ic_baseline_done_outline_24);
                         Toast.makeText(com.project.verification.EmpPkg.Employee.this, "Photo Uploaded Successfully!!!", Toast.LENGTH_SHORT).show();
                         //Intent intent = new Intent(getApplicationContext(), SubmittedResponse.class);
                         //startActivity(intent);
@@ -675,6 +766,10 @@ public class Employee extends AppCompatActivity
                                 Uri downloadUri = uri;
                             }
                         });
+
+                        // = findViewById(R.id.driver_ok);
+                        // photoPicStatus = findViewById(R.id.photo_ok);
+                        diverPicStatus.setImageResource(R.drawable.ic_baseline_done_outline_24);
                         Toast.makeText(com.project.verification.EmpPkg.Employee.this, "Photo Uploaded Successfully!!!", Toast.LENGTH_SHORT).show();
                     }
                 })
@@ -715,6 +810,8 @@ public class Employee extends AppCompatActivity
                                 Uri downloadUri = uri;
                             }
                         });
+                        //  = findViewById(R.id.photo_ok);
+                          photoPicStatus.setImageResource(R.drawable.ic_baseline_done_outline_24);
                           Toast.makeText(com.project.verification.EmpPkg.Employee.this, "Photo Uploaded Successfully!!!", Toast.LENGTH_SHORT).show();
                     }
                 })

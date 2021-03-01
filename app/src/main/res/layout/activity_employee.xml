@@ -1,136 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context=".EmpPkg.Employee"
-    android:background="#60B4E8A5">
+    android:background="#60B4E8A5"
+    android:orientation="vertical"
+    android:padding="7dp"
+    tools:context=".EmpPkg.Employee">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="EMPLOYEE DETAIL"
-        android:gravity="center"
-        android:textSize="26dp"
         android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="EMPLOYEE DETAIL"
         android:textColor="#397000"
-        android:textStyle="bold"
-        ></TextView>
+        android:textSize="26dp"
+        android:textStyle="bold"></TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="Name :-"
-            android:textSize="20dp"
-            android:layout_marginTop="20dp"
             android:textColor="#397000"
-            android:textStyle="bold"
-            android:padding="10dp"
-            ></TextView>
+            android:textSize="17dp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
             android:gravity="center"
-            android:textSize="20dp"
-            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:text="Name"
             android:textColor="#397000"
-            android:textStyle="bold"
-            android:padding="10dp"
-            ></TextView>
+            android:textSize="17dp"
+            android:textStyle="bold"></TextView>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="Age :-"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"
             android:textColor="#397000"
-            android:textStyle="bold"
-            android:padding="10dp"
-            ></TextView>
+            android:textSize="17dp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:id="@+id/tvAge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Age"
             android:gravity="center"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="Age"
             android:textColor="#397000"
-            android:textStyle="bold"
-            android:padding="10dp"
-            ></TextView>
+            android:textSize="17dp"
+            android:textStyle="bold"></TextView>
 
     </LinearLayout>
 
 
-
-
-   <!-- <TextView
-        android:id="@+id/tvSalary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Address"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:layout_marginTop="15dp"
-        android:textColor="#397000"
-        android:textStyle="bold"
-        android:padding="10dp"
-        ></TextView>-->
+    <!-- <TextView
+         android:id="@+id/tvSalary"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="Address"
+         android:gravity="center"
+         android:textSize="20dp"
+         android:layout_marginTop="15dp"
+         android:textColor="#397000"
+         android:textStyle="bold"
+         android:padding="10dp"
+         ></TextView>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        >
+        android:orientation="horizontal">
 
-<!--    <Spinner-->
-<!--        android:id="@+id/spinner"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:ems="10"-->
-<!--        android:gravity="center"-->
-<!--        android:inputType="textPersonName"-->
-<!--        android:text="Author"></Spinner>-->
+        <!--    <Spinner-->
+        <!--        android:id="@+id/spinner"-->
+        <!--        android:layout_width="50dp"-->
+        <!--        android:layout_height="50dp"-->
+        <!--        android:ems="10"-->
+        <!--        android:gravity="center"-->
+        <!--        android:inputType="textPersonName"-->
+        <!--        android:text="Author"></Spinner>-->
     </LinearLayout>
 
-<!--
-    <TextView
-        android:id="@+id/submited"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Docs Sunbmitted Status"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:textColor="#397000"
-        android:layout_margin="10dp"
-        android:textStyle="bold"></TextView>-->
+    <!--
+        <TextView
+            android:id="@+id/submited"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Docs Sunbmitted Status"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#397000"
+            android:layout_margin="10dp"
+            android:textStyle="bold"></TextView>-->
 
 
     <ProgressBar
@@ -146,267 +132,394 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:alignmentMode="alignMargins"
-        android:padding="14dp"
-        android:orientation="vertical"
-        tools:ignore="Suspicious0dp">
+        android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/criminal"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#6084ED66">
+            android:layout_height="match_parent"
+            android:alignmentMode="alignMargins"
+            android:orientation="vertical"
+            android:padding="5dp"
+            tools:ignore="Suspicious0dp">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/criminal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-                <TextView
+                android:backgroundTint="#60B3FF9D">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/criminal"
+                        android:drawablePadding="5dp"
+                        android:text="Short Video"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/pickVideoFab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/criminal"
-                    android:text="Short Video"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="70dp"
+                    android:src="@drawable/addvideo"
+                    app:backgroundTint="@color/mycolor"
+                    app:fabSize="mini"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-            </LinearLayout>
+                <VideoView
+                    android:id="@+id/videoView"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="130dp"></VideoView>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/pickVideoFab"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_gravity="center"
-                android:src="@drawable/addvideo"
-                app:backgroundTint="@color/mycolor">
-            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+            </androidx.cardview.widget.CardView>
 
-            <VideoView
-                android:id="@+id/videoView"
-                android:layout_width="50dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="130dp"
-                ></VideoView>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/adharCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#6084ED66"
-            >
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/adharCard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#60B3FF9D"
+                android:gravity="center"
+                android:visibility="gone"
                 >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Adhar Card"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:drawableLeft="@drawable/adharcard"
-                    />
-            </LinearLayout>
-            <ImageView
-                android:id="@+id/adharimg"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                 android:layout_marginLeft="130dp"
-                ></ImageView>
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/pan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#6084ED66"
-            >
-            <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/adharcard"
+                        android:drawablePadding="5dp"
+                        android:text="Adhar Card"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/adharimg"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="100dp" />
+
+                    <ImageView
+                        android:id="@+id/adharimg_ok"
+                        android:layout_width="38dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_baseline_close_24" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pan"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#60B3FF9D"
+                android:gravity="center"
+                android:visibility="gone"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pan"
+                        android:drawablePadding="5dp"
+                        android:text="Pan Card"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        />
+
+                    <ImageView
+                        android:id="@+id/panimg"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="115dp" />
+
+                    <ImageView
+                        android:id="@+id/pan_ok"
+                        android:layout_width="38dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_baseline_close_24" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/d_licen"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#60B3FF9D"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/licen"                        android:drawablePadding="5dp"
+                        android:text="Driver License"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/licenimg"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="85dp" />
+
+                    <ImageView
+                        android:id="@+id/driver_ok"
+                        android:layout_width="38dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_baseline_close_24"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#60B3FF9D"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/photo"
+                        android:drawablePadding="5dp"
+                        android:text="Photo"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ephoto"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="140dp" />
+
+                    <ImageView
+                        android:id="@+id/photo_ok"
+                        android:layout_width="38dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_baseline_close_24"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#60B3FF9D"
+                android:id="@+id/criminal_card"
+                android:visibility="gone"
                 >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pan Card"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:drawableLeft="@drawable/pan"
-                    />
-            </LinearLayout>
-            <ImageView
-                android:id="@+id/panimg"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="130dp"
-                ></ImageView>
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/d_licen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#6084ED66"
-            >
-            <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/selected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/criminal_record"
+                        android:drawablePadding="5dp"
+                        android:text="Criminal Record"
+                        android:gravity="center_vertical"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:inputType="textPersonName"
+                            android:text="Author"
+                            android:visibility="gone"
+                            android:entries="@array/criminal_type"/>
+                        <EditText
+                            android:id="@+id/title"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="3dp"
+                            android:background="#fff"
+                            android:visibility="gone"
+                            android:hint="Add Criminal Record"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#60B3FF9D"
+                android:id="@+id/status_card"
+                android:visibility="gone"
                 >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Driver License"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:drawableLeft="@drawable/licen"
-                    />
-            </LinearLayout>
-            <ImageView
-                android:id="@+id/licenimg"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="130dp"
-                ></ImageView>
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#6084ED66"
-            >
-            <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/status"
+                        android:drawablePadding="5dp"
+                        android:text="Status"
+                        android:gravity="center_vertical"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/type_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="3dp"
+                            android:background="#fff"
+                            android:visibility="gone"
+                            android:hint="Add Status"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+          <!-- <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Photo"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:drawableLeft="@drawable/photo"
-                    />
-            </LinearLayout>
-            <ImageView
-                android:id="@+id/ephoto"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="130dp">
-            </ImageView>
-        </androidx.cardview.widget.CardView>
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#60B3FF9D">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#6084ED66"
-            >
-            <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/select_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/status"
+                        android:drawablePadding="5dp"
+                        android:text="Add Status"
+                        android:gravity="center_vertical"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <EditText
+                            android:id="@+id/saveStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="3dp"
+                            android:background="#fff"
+                            android:visibility="gone"
+                            android:hint="Add Status"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+-->
+
+
+            <Button
+                android:id="@+id/upload"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:id="@+id/selected"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Criminal Record"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:drawableLeft="@drawable/photo"
-                    />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                android:layout_marginTop="20dp"
+                android:background="@drawable/backbtn"
+                android:text="Upload"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                ></Button>
+        </LinearLayout>
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/video"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:backgroundTint="#6084ED66"-->
-<!--            >-->
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_margin="10dp"-->
-<!--                android:orientation="vertical"-->
-<!--                >-->
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Add Short Video"-->
-<!--                    android:textSize="20dp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:drawableLeft="@drawable/videocam"-->
-<!--                    />-->
-<!--            </LinearLayout>-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/shortvideo"-->
-<!--                android:layout_width="20dp"-->
-<!--                android:layout_height="20dp"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_marginLeft="150dp"-->
-<!--                ></ImageView>-->
-<!--            -->
-<!--        </androidx.cardview.widget.CardView>-->
-
-
-        <Button
-            android:id="@+id/upload"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/backbtn"
-            android:text="Upload"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            android:textStyle="bold">
-        </Button>
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
 
 </LinearLayout>

@@ -4,51 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CriminalRecordStored"
-    android:orientation="vertical"
     android:layout_gravity="center"
-    >
+    android:orientation="vertical"
+    tools:context=".CriminalRecordStored">
 
     <TextView
-        android:layout_width="280dp"
-        android:layout_height="42dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Criminal Record"
-        android:textSize="35dp"
         android:gravity="center"
+        android:padding="5dp"
+        android:background="#AAFFFBD7"
+        android:text="Criminal Record"
         android:textColor="#397000"
-        android:textStyle="bold"
-        android:layout_marginLeft="30dp"
-        ></TextView>
+        android:textSize="35dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/selected"
-            android:layout_width="219dp"
+            android:layout_width="10dp"
             android:layout_height="42dp"
-            android:text="Criminal Record"
-            android:textSize="20dp"
             android:gravity="center"
+            android:visibility="gone"
+            android:text="Criminal Record"
             android:textColor="#397000"
-            android:textStyle="bold">
-        </TextView>
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="50dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:text="Author">
-        </Spinner>
+            android:text="Author"></Spinner>
 
     </LinearLayout>
 
@@ -57,20 +55,17 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="20dp"
-        android:hint="Add Criminal Record"
-        >
-    </EditText>
+        android:hint="Add Criminal Record"/>
 
     <Button
         android:id="@+id/save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/backbtn"
         android:text="Submit Data"
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_margin="20dp">
-    </Button>
+        android:textStyle="bold"></Button>
 </LinearLayout>

@@ -24,8 +24,8 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class VerifyOTPActivity extends AppCompatActivity {
-
+public class VerifyOTPActivity extends AppCompatActivity
+{
     private EditText inputCode1,inputCode2,inputCode3,inputCode4,inputCode5,inputCode6;
 
     private String verificationId;
@@ -71,12 +71,12 @@ public class VerifyOTPActivity extends AppCompatActivity {
                     return;
                 }
                 String code =
-                        inputCode1.getText().toString()+
-                                inputCode2.getText().toString()+
-                                inputCode3.getText().toString()+
-                                inputCode4.getText().toString()+
-                                inputCode5.getText().toString()+
-                                inputCode6.getText().toString();
+                    inputCode1.getText().toString()+
+                    inputCode2.getText().toString()+
+                    inputCode3.getText().toString()+
+                    inputCode4.getText().toString()+
+                    inputCode5.getText().toString()+
+                    inputCode6.getText().toString();
 
                 if (verificationId != null)
                 {
@@ -87,30 +87,34 @@ public class VerifyOTPActivity extends AppCompatActivity {
                             code
                     );
                     FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>()
+                            {
                                 @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                public void onComplete(@NonNull Task<AuthResult> task)
+                                {
                                     progressBar.setVisibility(View.GONE);
                                     buttonverify.setVisibility(View.VISIBLE);
                                     if (task.isSuccessful())
-                                    {
-                                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                        startActivity(intent);
-                                    }
-                                    else
-                                    {
-                                        Toast.makeText(VerifyOTPActivity.this, "The Verification code entered was invalid!!!", Toast.LENGTH_SHORT).show();
-                                    }
+                                {
+                                    Intent intent = new Intent(getApplicationContext(),ClientLogin.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent);
                                 }
-                        });
+                                else
+                                {
+                                        Toast.makeText(VerifyOTPActivity.this, "The Verification code entered was invalid!!!", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                     });
                 }
             }
         });
 
-        findViewById(R.id.textResendOTP).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.textResendOTP).setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
                         "+91" + getIntent().getStringExtra("mobile"),
                         60,
@@ -119,14 +123,12 @@ public class VerifyOTPActivity extends AppCompatActivity {
                         new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
                             @Override
-                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-
-
+                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential)
+                            {
                             }
 
                             @Override
                             public void onVerificationFailed(@NonNull FirebaseException e) {
-
                                 Toast.makeText(VerifyOTPActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
 
@@ -139,8 +141,6 @@ public class VerifyOTPActivity extends AppCompatActivity {
                 );
             }
         });
-
-
     }
 
     private void sendOTPInputs()
@@ -211,7 +211,6 @@ public class VerifyOTPActivity extends AppCompatActivity {
         inputCode4.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -225,7 +224,6 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
 
@@ -249,7 +247,5 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 }

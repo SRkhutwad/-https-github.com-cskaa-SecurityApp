@@ -65,6 +65,7 @@ public class AllEmp extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<EmpPojo> call, Throwable t) {
+                Log.d("ERROR",t.getMessage());
             }
         });
     }

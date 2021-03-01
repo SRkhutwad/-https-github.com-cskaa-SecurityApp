@@ -20,4 +20,10 @@
     <string name="mail">Enter the valid mail</string>
     <string name="pass">Capital and Small small letter  symbol num</string>
 
+
+    <string-array name="criminal_type">
+        <item>Criminal Record found</item>
+        <item>Criminal Record not found</item>
+    </string-array>
+
 </resources>

@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.project.verification.R;
+import com.project.verification.securityRegistration.securityLogin;
 import com.project.verification.securityRegistration.securityRegi;
 
 import java.util.concurrent.TimeUnit;
@@ -96,7 +97,7 @@ public class OtpVerifySecurity extends AppCompatActivity {
                                     buttonverify.setVisibility(View.VISIBLE);
                                     if (task.isSuccessful())
                                     {
-                                        Intent intent = new Intent(getApplicationContext(), securityRegi.class);
+                                        Intent intent = new Intent(getApplicationContext(), securityLogin.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                     }

@@ -16,6 +16,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.project.verification.R;
 import com.project.verification.VerifyOTPActivity;
+import com.project.verification.securityRegistration.securityLogin;
 
 import java.util.concurrent.TimeUnit;
 
@@ -69,10 +70,17 @@ public class SendOtp extends AppCompatActivity
                                 progressBar.setVisibility(View.GONE);
                                 buttonGetOTP.setVisibility(View.VISIBLE);
 
-                                Intent intent = new Intent(getApplicationContext(), OtpVerifySecurity.class);
-                                intent.putExtra("mobile", inputMobile.getText().toString());
-                                intent.putExtra("verificationID", verificationID);
-                                startActivity(intent);
+                                if(inputMobile.getText().equals("mobile"))
+                                {
+                                    Intent intent = new Intent(getApplicationContext(), securityLogin.class);
+                                    startActivity(intent);
+                                }else
+                                {
+                                    Intent intent = new Intent(getApplicationContext(), OtpVerifySecurity.class);
+                                    intent.putExtra("mobile", inputMobile.getText().toString());
+                                    intent.putExtra("verificationID", verificationID);
+                                    startActivity(intent);
+                                }
                             }
                         }
                 );

@@ -23,7 +23,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.project.verification.EmpPkg.CriminalPojo;
 import com.project.verification.EmpPkg.Employee;
+import com.project.verification.Preferences.PreferenceData;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,11 +45,18 @@ public class CriminalRecordStored extends AppCompatActivity
     int maxid = 0;
     TextView selected;
 
+    String item = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criminal_record_stored);
+
+        String ct = PreferenceData.getCriminalRecordType(this);
+        String ct2 = PreferenceData.getCriminalRecord(this);
+
+        Toast.makeText(this, ct+"\n"+ct2, Toast.LENGTH_LONG).show();
 
         title = findViewById(R.id.title);
         save = findViewById(R.id.save);
@@ -69,13 +80,17 @@ public class CriminalRecordStored extends AppCompatActivity
         spinner.setAdapter(dataAdapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (adapterView.getItemAtPosition(i).equals("choose event")) {
 
                 } else {
-                    //String item = adapterView.getItemAtPosition(i).toString();
-                    selected.setText(adapterView.getSelectedItem().toString());
+                    item = spinner.getSelectedItem().toString();
+                    if(PreferenceData.getCriminalRecordType(getApplicationContext()) == null){
+                        PreferenceData.setCriminalRecordType(getApplicationContext(),item);
+                    }
+//                    selected.setText(adapterView.getSelectedItem().toString());
                 }
             }
 
@@ -105,6 +120,12 @@ public class CriminalRecordStored extends AppCompatActivity
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(title.getText().toString().trim().isEmpty()) {
+                    title.setError("Enter criminal record here");
+                } else {
+                    savePrefData();
+                }
 //                String spin = spinner.getSelectedItem().toString();
 //                if (spinner != null) {
 //
@@ -136,7 +157,28 @@ public class CriminalRecordStored extends AppCompatActivity
                     }
                 });
                 //}
+//                sendUsingEventBus();
             }
         });
+    }
+
+    private void getBack() {
+
+    }
+
+//    private void sendUsingEventBus() {
+//        CriminalPojo criminalPojo = new CriminalPojo();
+//        criminalPojo.setCriminal_record_type(PreferenceData.getCriminalRecordType(this));
+//        criminalPojo.setCriminal_record(PreferenceData.getCriminalRecord(this));
+//        EventBus.getDefault().post(criminalPojo);
+//        finish();
+//    }
+
+    private void savePrefData() {
+        if(PreferenceData.getCriminalRecord(this).isEmpty()){
+            PreferenceData.setCriminalRecord(this, title.getText().toString().trim());
+        } else {
+            PreferenceData.getCriminalRecord(this);
+        }
     }
 }
